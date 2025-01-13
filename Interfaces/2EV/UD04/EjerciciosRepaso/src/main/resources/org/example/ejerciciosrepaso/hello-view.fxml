@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ejerciciosrepaso.HelloController">
+   <children>
+      <TableView fx:id="tabla" layoutY="69.0" prefHeight="331.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="nombre" prefWidth="210.0" text="Nombre" />
+          <TableColumn fx:id="apellidos" minWidth="0.0" prefWidth="188.0" text="Apellido" />
+            <TableColumn fx:id="localidad" prefWidth="201.0" text="Localidad" />
+        </columns>
+      </TableView>
+      <Label layoutX="43.0" layoutY="32.0" text="Selecciona la comunidad" />
+      <TextField fx:id="TextoLocalidad" layoutX="188.0" layoutY="28.0" />
+      <Button fx:id="ejecutar" layoutX="371.0" layoutY="28.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
+   </children>
+</AnchorPane>
