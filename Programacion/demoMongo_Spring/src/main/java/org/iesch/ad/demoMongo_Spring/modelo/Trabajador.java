@@ -14,12 +14,14 @@ public class Trabajador {
     private String nombre;
     private String email;
     private LocalDate fechaNacimiento;
+    private int altura;
 
-    public Trabajador(String id, String nombre, String email, LocalDate fechaNacimiento) {
+    public Trabajador(String id, String nombre, String email, LocalDate fechaNacimiento, int altura) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.fechaNacimiento = fechaNacimiento;
+        this.altura = altura;
     }
 
     public Trabajador() {
@@ -57,6 +59,14 @@ public class Trabajador {
         this.fechaNacimiento = fechaNacimiento;
     }
 
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura){
+        this.altura = altura;
+    }
+
     @Override
     public String toString() {
         return "Trabajador{" +
@@ -64,6 +74,7 @@ public class Trabajador {
                 ", nombre='" + nombre + '\'' +
                 ", email='" + email + '\'' +
                 ", fechaNacimiento=" + fechaNacimiento +
+                ", altura=" + altura +
                 '}';
     }
 }
