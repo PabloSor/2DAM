@@ -2,6 +2,7 @@
 <jasperReport name="agrupado" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="69c9df1e-38d4-4fb7-85cf-8f6a0838c223">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PrimeraConexion"/>
+	<parameter name="RutaImagen" class="java.lang.String"/>
 	<query language="SQL"><![CDATA[select * from datosdi.empleados;]]></query>
 	<field name="Nombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="Nombre"/>
@@ -36,7 +37,11 @@
 		</groupFooter>
 	</group>
 	<background splitType="Stretch"/>
-	<title height="79" splitType="Stretch"/>
+	<title height="105" splitType="Stretch">
+		<element kind="image" uuid="b8868904-dbf1-4ebb-9062-85191c0646bf" x="57" y="48" width="50" height="50">
+			<expression><![CDATA[$P{RutaImagen}]]></expression>
+		</element>
+	</title>
 	<pageHeader height="35" splitType="Stretch"/>
 	<columnHeader height="61" splitType="Stretch">
 		<element kind="staticText" uuid="7168761f-e639-456b-95d9-85efd624391a" x="109" y="0" width="100" height="30">

@@ -2,6 +2,7 @@
 <jasperReport name="Quenose" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02677ab1-485d-4a4f-a78c-0c3faef08ff5">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PrimeraConexion"/>
+	<parameter name="RutaImagen" class="java.lang.String"/>
 	<query language="SQL"><![CDATA[select * from datosdi.empleados]]></query>
 	<field name="Nombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="Nombre"/>
@@ -19,7 +20,11 @@
 		<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
 	</field>
 	<background splitType="Stretch"/>
-	<title height="79" splitType="Stretch"/>
+	<title height="89" splitType="Stretch">
+		<element kind="image" uuid="71dc607d-e069-4af2-aeb1-bbf939b78053" x="58" y="39" width="50" height="50">
+			<expression><![CDATA[$P{RutaImagen}]]></expression>
+		</element>
+	</title>
 	<pageHeader height="35" splitType="Stretch"/>
 	<columnHeader height="61" splitType="Stretch">
 		<element kind="staticText" uuid="a9e77732-5941-47bf-afc7-f330740b5005" x="40" y="0" width="100" height="30">

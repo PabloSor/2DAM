@@ -21,7 +21,7 @@
                </toggleGroup>
             </RadioButton>
             <RadioButton fx:id="informeAgrupado" layoutX="232.0" layoutY="212.0" mnemonicParsing="false" text="Informe agrupado" toggleGroup="$grupo1" />
-            <Button fx:id="mostrarInforme" layoutX="234.0" layoutY="270.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="117.0" text="Mostrar informe" />
+            <Button fx:id="mostrarInforme" onAction="#comprobar" layoutX="234.0" layoutY="270.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="117.0" text="Mostrar informe" />
          </children>
       </Pane>
    </children>
