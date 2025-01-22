@@ -81,7 +81,7 @@ public class HelloController {
         param.put("RutaImagen","file:imagenes/logo.png");
 
         JRDesignQuery jq = new JRDesignQuery();
-        jq.setText("SELECT * FROM datosdi.empleados WHERE Localidad='"+ciudad+"'");
+        jq.setText("SELECT Nombre, Apellidos, Localidad, Salario, Salario*0.85 as SalNeto FROM datosdi.empleados WHERE Localidad='"+ciudad+"'");
 
         d.setQuery(jq);
         JasperReport jr = JasperCompileManager.compileReport(d);
