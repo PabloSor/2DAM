@@ -31,7 +31,7 @@ public class PersonaUsingTemplateControl {
     @GetMapping("/personaT/{id}")
     public ResponseEntity<?> buscarPersona(@PathVariable String id) {
         return ResponseEntity.ok(personaTemplate.buscarPorId(id));
-    }
+    }1
 
     @PutMapping("/personaT/{id}")
     public ResponseEntity<?> actualizarPersona(@RequestBody Persona person, @PathVariable String id) {

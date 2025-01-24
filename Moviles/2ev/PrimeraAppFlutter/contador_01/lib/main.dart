@@ -83,8 +83,8 @@ class _CalculadoraState extends State<Calculadora> {
       child: ElevatedButton(
         onPressed: () => _botonPresionado(texto),
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(20),
-        ),
+            padding: EdgeInsets.all(20),
+            backgroundColor: Color.fromARGB(80, 0, 255, 0)),
         child: Text(
           texto,
           style: TextStyle(fontSize: 24),
@@ -99,22 +99,24 @@ class _CalculadoraState extends State<Calculadora> {
       appBar: AppBar(
         title: Text("Calculadora"),
         centerTitle: true,
+        backgroundColor: Color.fromARGB(255, 255, 0, 0),
       ),
       body: Column(
         children: [
           Expanded(
             child: Container(
-              alignment: Alignment.centerRight,
+              alignment: Alignment.center,
               padding: EdgeInsets.symmetric(horizontal: 12),
               child: Text(
                 _output,
-                style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold),
               ),
             ),
           ),
           Column(
             children: [
               Row(
+                spacing: 10.0,
                 children: [
                   _crearBoton("7"),
                   _crearBoton("8"),
@@ -123,6 +125,7 @@ class _CalculadoraState extends State<Calculadora> {
                 ],
               ),
               Row(
+                spacing: 10.0,
                 children: [
                   _crearBoton("4"),
                   _crearBoton("5"),
@@ -131,6 +134,7 @@ class _CalculadoraState extends State<Calculadora> {
                 ],
               ),
               Row(
+                spacing: 10.0,
                 children: [
                   _crearBoton("1"),
                   _crearBoton("2"),
@@ -139,16 +143,18 @@ class _CalculadoraState extends State<Calculadora> {
                 ],
               ),
               Row(
+                spacing: 10.0,
                 children: [
                   _crearBoton("C"),
                   _crearBoton("0"),
-                  _crearBoton("="),
+                  _crearBoton("%"),
                   _crearBoton("+")
                 ],
               ),
               Row(
+                spacing: 10.0,
                 children: [
-                  _crearBoton("%"),
+                  _crearBoton("="),
                 ],
               ),
             ],
