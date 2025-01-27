@@ -1,0 +1,1 @@
+ C:\\Users\\dam2\\Desktop\\REPOSITORIO\\2DAM\\Moviles\\2ev\\PrimeraAppFlutter\\contador_01\\.dart_tool\\flutter_build\\9841e79b42ac57c7e8bc02bd8094f572\\native_assets.yaml: 
