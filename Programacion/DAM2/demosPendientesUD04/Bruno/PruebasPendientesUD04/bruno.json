@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "PruebasPendientesUD04",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

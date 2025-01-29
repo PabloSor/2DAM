@@ -8,7 +8,7 @@ import java.io.IOException;
 public class ClienteFTP {
 
     public static void main(String[] args) {
-        String server = "ftp.uv.es";
+        String server = "ftp.rediris.es";
         int port = 21;
         String user = "anonymous";
         String pass = ""; // Se puede usar el correo como contraseña o dejarlo vacío.
@@ -25,6 +25,7 @@ public class ClienteFTP {
                 System.out.println("Conectado a " + server);
 
                 // Obtener la lista de directorios y archivos en el directorio raíz
+                ftpClient.enterLocalPassiveMode();
                 printDirectoryContents(ftpClient, "/");
             } else {
                 System.out.println("No se pudo conectar al servidor FTP.");
@@ -52,8 +53,8 @@ public class ClienteFTP {
                 System.out.println("Directorio: " + file.getName());
 
                 // Recursivamente entrar a cada subdirectorio
-                String subPath = path + file.getName() + "/";
-                printDirectoryContents(ftpClient, subPath);
+//                String subPath = path + file.getName() + "/";
+//                printDirectoryContents(ftpClient, subPath);
             }
         }
     }

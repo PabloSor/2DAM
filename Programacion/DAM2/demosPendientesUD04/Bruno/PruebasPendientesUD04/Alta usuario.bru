@@ -1,0 +1,20 @@
+meta {
+  name: Alta usuario
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/usuario
+  body: json
+  auth: none
+}
+
+body:json {
+  { 
+      "username":"pablo",
+      "password":"12345678",
+      "passwordConfirm":"12345678",
+      "email":"aa@aa.es"
+  }
+}
