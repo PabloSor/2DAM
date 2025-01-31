@@ -28,6 +28,7 @@ public class UserEntity implements UserDetails {
 
     @CreatedDate
     private LocalDateTime createdAt;
+    private LocalDateTime lastLogin;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -79,5 +80,21 @@ public class UserEntity implements UserDetails {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getLastLogin() {return lastLogin;}
+
+    public void setLastLogin(LocalDateTime lastLogin) {this.lastLogin = lastLogin;}
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                ", createdAt=" + createdAt +
+                ", lastLogin=" + lastLogin +
+                '}';
     }
 }
