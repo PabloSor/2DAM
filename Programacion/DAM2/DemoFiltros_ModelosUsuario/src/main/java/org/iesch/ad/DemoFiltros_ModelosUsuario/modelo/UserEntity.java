@@ -30,6 +30,10 @@ public class UserEntity implements UserDetails {
     private LocalDateTime createdAt;
     private LocalDateTime lastLogin;
 
+    private int failedLoginAttemps;
+    private boolean accountNotLocked = true;
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles.stream().map(rol -> new SimpleGrantedAuthority("ROLE_" + rol.name())).toList();
@@ -85,6 +89,22 @@ public class UserEntity implements UserDetails {
     public LocalDateTime getLastLogin() {return lastLogin;}
 
     public void setLastLogin(LocalDateTime lastLogin) {this.lastLogin = lastLogin;}
+
+    public int getFailedLoginAttemps() {
+        return failedLoginAttemps;
+    }
+
+    public void setFailedLoginAttemps(int failedLoginAttemps) {
+        this.failedLoginAttemps = failedLoginAttemps;
+    }
+
+    public boolean isAccountNotLocked() {
+        return accountNotLocked;
+    }
+
+    public void setAccountNotLocked(boolean accountNotLocked) {
+        this.accountNotLocked = accountNotLocked;
+    }
 
     @Override
     public String toString() {
