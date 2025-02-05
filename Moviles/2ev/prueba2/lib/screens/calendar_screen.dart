@@ -57,12 +57,18 @@ class _CalendarScreenState extends State<CalendarScreen> {
               _focusedDay = focusedDay;
             });
           }
-      
         },
         calendarBuilders: CalendarBuilders(
           defaultBuilder: (context, day, focusedDay) {
-            if (diasDestacados.contains(day)){
-              return Container()
+            if (diasDestacados.any((elemnt) => isSameDay(elemnt, day))) {
+              return Container(
+                margin: EdgeInsets.all(5),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.red
+                ),
+              )
             }
           },
         ),
