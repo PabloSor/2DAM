@@ -1,19 +1,38 @@
 import 'package:flutter/material.dart';
 
 class SubjectsScreen extends StatelessWidget {
-  const SubjectsScreen({super.key});
+  final asignaturas = const ['PMDM', 'DAW', 'LM'];
+
+  const SubjectsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Subjects screen",
-          style: TextStyle(color: Colors.white, fontSize: 25),
+          'Mis asignaturas',
+          style: TextStyle(fontSize: 30, color: Colors.white),
         ),
-        backgroundColor: const Color.fromARGB(255, 3, 202, 10),
+        backgroundColor: Colors.indigo,
       ),
-      body: const Text("Body subjects"),
+      body: ListView.separated(
+        itemBuilder: (context, index) => ListTile(
+          leading: Icon(Icons.apps_rounded, color: Colors.indigo),
+          title: Text(asignaturas[index]),
+          trailing: const Icon(Icons.arrow_right, color: Colors.indigo),
+          onTap: () {
+            if (index == 0) {
+              Navigator.pushNamed(context, 'pmdm');
+            } else if (index == 1) {
+              Navigator.pushNamed(context, 'aw');
+            } else {
+              Navigator.pushNamed(context, 'lm');
+            }
+          },
+        ),
+        separatorBuilder: (context, index) => Divider(),
+        itemCount: asignaturas.length,
+      ),
     );
   }
 }
