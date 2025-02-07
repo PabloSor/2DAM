@@ -1,52 +1,45 @@
 package org.example;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.URI;
-import java.time.Duration;
+import org.apache.http.HttpEntity;
+import org.apache.http.ParseException;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
+
+import java.io.*;
 import java.util.Scanner;
 
 public class RAEHttpClientVersion2 {
     public static void main(String[] args) {
+
+
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduce la palabra a buscar: ");
-        String palabra = scanner.nextLine().trim();
+        System.out.println("Dame una palabra para encontrar");
+        String palabra = scanner.nextLine();
         scanner.close();
 
-        String urlString = "https://dle.rae.es/" + palabra;
-
-        // Crear el cliente con HttpClient.Builder
-        HttpClient httpClient = HttpClient.newBuilder()
-                .connectTimeout(Duration.ofSeconds(10)) // Establece un timeout
-                .followRedirects(HttpClient.Redirect.ALWAYS) // Sigue redirecciones
-                .build();
-
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(urlString))
-                .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
-                .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
-                .header("Accept-Language", "es-ES,es;q=0.9")
-                //.header("Connection", "keep-alive")
-                .GET()
-                .build();
-
         try {
-            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
-            if (response.statusCode() == 200) {
-                String nombreArchivo = "resultadoV2.html";
-                Files.write(Paths.get(nombreArchivo), response.body().getBytes());
-                System.out.println("Página guardada en: " + nombreArchivo);
-            } else {
-                System.out.println("Error al obtener la página: Código " + response.statusCode());
+            CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+            HttpGet request = new HttpGet("https://dle.rae.es/" + palabra);
+            request.setHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36 OPR/38.0.2220.41");
+
+            try (CloseableHttpResponse response = httpClient.execute(request);
+                 BufferedWriter writer = new BufferedWriter(new FileWriter("resultadoV2.html"))) {
+
+                HttpEntity entity = response.getEntity();
+                if (entity != null) {
+                    String resultado = EntityUtils.toString(entity);
+                    writer.write(resultado);
+                }
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
             }
 
-        } catch (IOException | InterruptedException e) {
-            System.out.println("Error: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Error de entrada/salida: " + e.getMessage());
         }
     }
 }
