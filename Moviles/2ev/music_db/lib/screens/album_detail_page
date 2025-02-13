@@ -1,0 +1,31 @@
+// screens/album_detail_page.dart
+import 'package:flutter/material.dart';
+import '../models/album.dart';
+
+class AlbumDetailPage extends StatelessWidget {
+  final Album album;
+
+  const AlbumDetailPage({Key? key, required this.album}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(album.title)),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            album.coverUrl.isNotEmpty
+                ? Image.network(album.coverUrl)
+                : const SizedBox.shrink(),
+            const SizedBox(height: 20),
+            Text(
+              album.description,
+              style: const TextStyle(fontSize: 16),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
