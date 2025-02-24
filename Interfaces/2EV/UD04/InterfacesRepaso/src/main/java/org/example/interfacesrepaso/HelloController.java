@@ -64,13 +64,14 @@ public class HelloController {
 
 
     public void informe1() throws JRException {
-        String fileRepo = ".mvn/Reports/ExamenEj1.jasper";
+        String fileRepo = "Reports/ExamenEj1.jasper";
 
         Map<String, Object> parametros = new HashMap<>();
 
         String localidad = comboBoxLocalidad.getValue();
 
         parametros.put("SelectLocalidad", localidad);
+        parametros.put("imagen", "img/logo.png");
 
         JasperPrint jpRepo = JasperFillManager.fillReport(fileRepo, parametros, con);
         JasperViewer viewer = new JasperViewer(jpRepo,false);
@@ -80,7 +81,7 @@ public class HelloController {
 
     @FXML
     public void informe2() throws JRException {
-        String fileRepo = ".mvn/Reports/ExamenEj2.jasper";
+        String fileRepo = "Reports/ExamenEj2.jasper";
 
         Map<String, Object> parametros2 = new HashMap<>();
 
@@ -90,6 +91,7 @@ public class HelloController {
         parametros2.put("minimo", menor);
 
         parametros2.put("maximo", mayor);
+        parametros2.put("imagen", "img/logo.png");
 
         JasperPrint jpRepo = JasperFillManager.fillReport(fileRepo, parametros2, con);
         JasperViewer viewer = new JasperViewer(jpRepo,false);
