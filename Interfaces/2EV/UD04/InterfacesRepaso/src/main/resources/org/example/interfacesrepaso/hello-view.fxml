@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.interfacesrepaso.HelloController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Button fx:id="Jasper1" onAction="#informe1" layoutX="218.0" layoutY="102.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Jasper1" />
-            <Button fx:id="Jasper2" onAction="#informe2" layoutX="218.0" layoutY="175.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Jasper2" />
-            <Button fx:id="Jasper3" onAction="#informe3" layoutX="218.0" layoutY="252.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Jasper3" />
+            <Button fx:id="Jasper1" layoutX="109.0" layoutY="150.0" mnemonicParsing="false" onAction="#informe1" prefHeight="50.0" prefWidth="120.0" text="Ejercicio 1" />
+            <Button fx:id="Jasper2" layoutX="374.0" layoutY="150.0" mnemonicParsing="false" onAction="#informe2" prefHeight="50.0" prefWidth="120.0" text="Ejercicio 2" />
+            <ComboBox fx:id="comboBoxLocalidad" layoutX="65.0" layoutY="44.0" prefWidth="150.0" />
+            <TextField fx:id="minimo" layoutX="360.0" layoutY="51.0" promptText="Minimo" />
+            <TextField fx:id="maximo" layoutX="360.0" layoutY="94.0" promptText="Maximo" />
          </children>
       </Pane>
    </children>

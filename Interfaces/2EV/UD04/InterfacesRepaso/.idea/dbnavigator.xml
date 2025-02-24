@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -35,6 +35,7 @@
         <condition column="CantidadVendida" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="75fe23d6-2a6b-48cc-875b-d02ea787ecdd" dataset="ventas.facturas" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />

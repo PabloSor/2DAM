@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact name="InterfacesRepaso:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/InterfacesRepaso_jar</output-path>
+    <root id="root">
+      <element id="archive" name="InterfacesRepaso.jar">
+        <element id="module-output" name="InterfacesRepaso" />
+      </element>
+      <element id="library" level="project" name="net.sf.jasperreports" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:22.0.1" />
+      <element id="library" level="project" name="net.sf.jasperreports.fonts" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:win:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:win:22.0.1" />
+      <element id="library" level="project" name="net.sf.jasperreports.excel.poi" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:win:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:22.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:22.0.1" />
+      <element id="library" level="project" name="mysql.connector.j" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:22.0.1" />
+      <element id="library" level="project" name="net.sf.jasperreports.charts" />
+    </root>
+  </artifact>
+</component>

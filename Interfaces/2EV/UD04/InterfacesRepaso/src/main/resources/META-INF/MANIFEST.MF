@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Main-Class: org.example.interfacesrepaso.Launcher
+Class-Path: jasperreports-7.0.1.jar commons-logging-1.3.0.jar commons-co
+ llections4-4.4.jar jackson-core-2.17.1.jar jackson-annotations-2.17.1.j
+ ar jackson-databind-2.17.1.jar jackson-dataformat-xml-2.17.1.jar stax2-
+ api-4.2.2.jar woodstox-core-6.6.2.jar batik-anim-1.17.jar batik-ext-1.1
+ 7.jar batik-parser-1.17.jar batik-shared-resources-1.17.jar batik-bridg
+ e-1.17.jar batik-script-1.17.jar batik-xml-1.17.jar xmlgraphics-commons
+ -2.9.jar commons-io-2.11.0.jar batik-dom-1.17.jar batik-svg-dom-1.17.ja
+ r batik-awt-util-1.17.jar batik-gvt-1.17.jar batik-util-1.17.jar batik-
+ i18n-1.17.jar batik-constants-1.17.jar batik-css-1.17.jar xml-apis-ext-
+ 1.3.04.jar commons-beanutils-1.9.4.jar commons-collections-3.2.2.jar ja
+ vafx-fxml-22.0.1.jar jasperreports-fonts-7.0.1.jar javafx-fxml-22.0.1-w
+ in.jar javafx-controls-22.0.1.jar javafx-graphics-22.0.1-win.jar jasper
+ reports-excel-poi-7.0.0.jar commons-logging-1.3.0.jar commons-collectio
+ ns4-4.4.jar poi-5.2.2.jar commons-codec-1.15.jar commons-math3-3.6.1.ja
+ r commons-io-2.11.0.jar SparseBitSet-1.2.jar log4j-api-2.17.2.jar poi-o
+ oxml-5.2.2.jar poi-ooxml-lite-5.2.2.jar xmlbeans-5.0.3.jar commons-comp
+ ress-1.21.jar curvesapi-1.07.jar jasperreports-data-adapters-7.0.0.jar 
+ jackson-core-2.17.1.jar jackson-databind-2.17.1.jar jackson-annotations
+ -2.17.1.jar jackson-dataformat-xml-2.17.1.jar stax2-api-4.2.2.jar woods
+ tox-core-6.6.2.jar jasperreports-json-7.0.0.jar antlr-2.7.7.jar jasperr
+ eports-7.0.0.jar batik-anim-1.17.jar batik-ext-1.17.jar batik-parser-1.
+ 17.jar batik-shared-resources-1.17.jar batik-bridge-1.17.jar batik-scri
+ pt-1.17.jar batik-xml-1.17.jar xmlgraphics-commons-2.9.jar batik-dom-1.
+ 17.jar batik-svg-dom-1.17.jar batik-awt-util-1.17.jar batik-gvt-1.17.ja
+ r batik-util-1.17.jar batik-i18n-1.17.jar batik-constants-1.17.jar bati
+ k-css-1.17.jar xml-apis-ext-1.3.04.jar commons-beanutils-1.9.4.jar comm
+ ons-collections-3.2.2.jar javafx-controls-22.0.1-win.jar javafx-graphic
+ s-22.0.1.jar javafx-base-22.0.1-win.jar mysql-connector-j-9.2.0.jar pro
+ tobuf-java-4.29.0.jar javafx-base-22.0.1.jar jasperreports-charts-7.0.1
+ .jar jfreechart-1.5.4.jar batik-dom-1.17.jar batik-css-1.17.jar batik-e
+ xt-1.17.jar batik-shared-resources-1.17.jar batik-xml-1.17.jar batik-sv
+ ggen-1.17.jar batik-i18n-1.17.jar batik-util-1.17.jar batik-constants-1
+ .17.jar batik-awt-util-1.17.jar xmlgraphics-commons-2.9.jar commons-io-
+ 2.11.0.jar jasperreports-7.0.1.jar commons-logging-1.3.0.jar commons-co
+ llections4-4.4.jar jackson-core-2.17.1.jar jackson-annotations-2.17.1.j
+ ar jackson-databind-2.17.1.jar jackson-dataformat-xml-2.17.1.jar stax2-
+ api-4.2.2.jar woodstox-core-6.6.2.jar batik-anim-1.17.jar batik-parser-
+ 1.17.jar batik-bridge-1.17.jar batik-script-1.17.jar batik-svg-dom-1.17
+ .jar batik-gvt-1.17.jar xml-apis-ext-1.3.04.jar commons-beanutils-1.9.4
+ .jar commons-collections-3.2.2.jar
+
