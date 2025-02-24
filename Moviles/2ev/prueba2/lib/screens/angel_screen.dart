@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class PmdmScreen extends StatelessWidget {
-  const PmdmScreen({Key? key}) : super(key: key);
+class AngelScreen extends StatelessWidget {
+  const AngelScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'PMDM',
+          'ANGEL',
           style: TextStyle(fontSize: 30, color: Colors.white),
         ),
         backgroundColor: Colors.indigo,
@@ -17,10 +17,7 @@ class PmdmScreen extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           children: [
-            CardPmdm(texto: "Profesor"),
-            CardPmdm(texto: "Programación"),
-            CardPmdm(texto: "Exámenes"),
-            CardPmdm(texto: "Temario visto"),
+            CardPmdm(texto: "INFORMACIÓN"),
           ],
         ),
       ),
@@ -39,7 +36,7 @@ class CardPmdm extends StatelessWidget {
       child: ListTile(
         title: Text(texto),
         subtitle: Text(
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquam leo quis venenatis faucibus. Curabitur libero nisl, vulputate at hendrerit quis, ultrices eu mi. Nam a justo nec ante auctor eleifend. Proin erat libero, tincidunt nec justo eu, sollicitudin feugiat diam. Suspendisse suscipit lorem vel turpis vehicula, sit amet bibendum.',
+          'Profesor de Programación \nNombre: Ángel \nTelefono: 672 32 73 23 \nCurso: DAM1',
         ),
       ),
     );

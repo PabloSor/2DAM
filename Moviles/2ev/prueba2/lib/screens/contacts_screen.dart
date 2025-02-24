@@ -1,19 +1,45 @@
 import 'package:flutter/material.dart';
 
 class ContactsScreen extends StatelessWidget {
-  const ContactsScreen({super.key});
+  ContactsScreen({Key? key}) : super(key: key);
+  
+  final contactos = [
+    "mescudern@iesch.org",
+    "arodriguezg@iesch.org",
+    "jmorenod@iesch.org",
+    "asancheze@ieshc.org"
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Contacts screen",
-          style: TextStyle(color: Colors.white, fontSize: 25),
+          'Contactos',
+          style: TextStyle(fontSize: 30, color: Colors.white),
         ),
-        backgroundColor: const Color.fromARGB(255, 3, 202, 10),
+        backgroundColor: Colors.indigo,
       ),
-      body: const Text("Body contacts"),
+      body: ListView.separated(
+        itemBuilder:
+            (context, index) => ListTile(
+              leading: Icon(Icons.contact_mail),
+              title: Text(contactos[index]),
+              onTap: () {
+                 if (index == 0) {
+                  Navigator.pushNamed(context, 'mario');
+                } else if (index == 1) {
+                  Navigator.pushNamed(context, 'alberto');
+                } else if (index == 2) {
+                  Navigator.pushNamed(context, 'juanma');
+                } else {
+                  Navigator.pushNamed(context, 'angel');
+                }
+              },
+            ),
+        separatorBuilder: (context, index) => Divider(),
+        itemCount: contactos.length,
+      ),
     );
   }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class PmdmScreen extends StatelessWidget {
-  const PmdmScreen({Key? key}) : super(key: key);
+class LmScreen extends StatelessWidget {
+  const LmScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'PMDM',
+          'LM',
           style: TextStyle(fontSize: 30, color: Colors.white),
         ),
         backgroundColor: Colors.indigo,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SubjectsScreen extends StatelessWidget {
-  final asignaturas = const ['PMDM', 'DAW', 'LM'];
+  final asignaturas = const ['PMDM', 'AW', 'LM'];
 
   const SubjectsScreen({Key? key}) : super(key: key);
 
@@ -22,11 +22,11 @@ class SubjectsScreen extends StatelessWidget {
           trailing: const Icon(Icons.arrow_right, color: Colors.indigo),
           onTap: () {
             if (index == 0) {
-              Navigator.pushNamed(context, 'pmdm');
+              Navigator.pushNamed(context, 'PMDM');
             } else if (index == 1) {
-              Navigator.pushNamed(context, 'aw');
+              Navigator.pushNamed(context, 'AW');
             } else {
-              Navigator.pushNamed(context, 'lm');
+              Navigator.pushNamed(context, 'LM');
             }
           },
         ),
