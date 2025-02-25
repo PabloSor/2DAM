@@ -1,18 +1,35 @@
 import 'package:flutter/material.dart';
-import 'screens/artist_list_page.dart';
+import 'package:music_db/provider/disks_provider.dart';
+import 'package:music_db/screens/screens.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(MyApp());
+void main() => runApp(AppState());
+
+class AppState extends StatelessWidget {
+  const AppState({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => DisksProvider(), lazy: false),
+    ], child: MyApp());
+  }
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'AudioDB App',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: ArtistListPage(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Discos',
+        initialRoute: 'home',
+        routes: {
+          'home': (BuildContext context) => HomeScreen(),
+          'details': (BuildContext context) => DetailsScreen()
+        },
+        theme: ThemeData.light()
+            .copyWith(appBarTheme: AppBarTheme(color: Colors.indigo)));
   }
 }
