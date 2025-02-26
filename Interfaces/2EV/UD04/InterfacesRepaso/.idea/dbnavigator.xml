@@ -35,6 +35,7 @@
         <condition column="CantidadVendida" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="75fe23d6-2a6b-48cc-875b-d02ea787ecdd" dataset="examen.circuitos" active-filter-id="" />
     <filter-actions connection-id="75fe23d6-2a6b-48cc-875b-d02ea787ecdd" dataset="ventas.facturas" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">

@@ -39,13 +39,13 @@ public class HelloController {
 
     @FXML
     public void initialize() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/ventas";
+        String url = "jdbc:mysql://localhost:3306/examen";
         String user = "root";
         String clave = "";
         con = DriverManager.getConnection(url, user, clave);
         stat = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                 ResultSet.CONCUR_READ_ONLY);
-        String sql = "select * from ventas.facturas";
+        String sql = "select * from examen.circuitos";
         ResultSet rs = stat.executeQuery(sql);
 
         cargarLocalidades();
@@ -53,7 +53,7 @@ public class HelloController {
 
 
     public void cargarLocalidades() throws SQLException {
-        String query = "select DISTINCT(Localidad) from ventas.facturas";
+        String query = "select DISTINCT(Comunidad) from examen.circuitos";
 
         ResultSet rs = stat.executeQuery(query);
         while (rs.next()){
@@ -64,13 +64,13 @@ public class HelloController {
 
 
     public void informe1() throws JRException {
-        String fileRepo = "Reports/ExamenEj1.jasper";
+        String fileRepo = "Reports/RecuperacionEj1.jasper";
 
         Map<String, Object> parametros = new HashMap<>();
 
         String localidad = comboBoxLocalidad.getValue();
 
-        parametros.put("SelectLocalidad", localidad);
+        parametros.put("Comunidad", localidad);
         parametros.put("imagen", "img/logo.png");
 
         JasperPrint jpRepo = JasperFillManager.fillReport(fileRepo, parametros, con);
@@ -81,7 +81,7 @@ public class HelloController {
 
     @FXML
     public void informe2() throws JRException {
-        String fileRepo = "Reports/ExamenEj2.jasper";
+        String fileRepo = "Reports/RecuperacionEj2.jasper";
 
         Map<String, Object> parametros2 = new HashMap<>();
 
