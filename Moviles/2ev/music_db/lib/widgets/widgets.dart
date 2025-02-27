@@ -1,1 +1,0 @@
-export 'package:music_db/widgets/card_swiper.dart';

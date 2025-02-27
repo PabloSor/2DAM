@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:music_db/models/disk_response.dart';
+import 'package:music_db/models/album.dart';
 
 class AlbumScreen extends StatelessWidget {
+  final Album album;
+
+  AlbumScreen({required this.album});
+
   @override
   Widget build(BuildContext context) {
-    final DiskResponse album = ModalRoute.of(context)!.settings.arguments as DiskResponse;
-
     return Scaffold(
-      appBar: AppBar(title: Text(album.strAlbum)),
-      body: Column(
-        children: [
-          Image.network(album.strAlbumThumb ?? ''),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(album.strDescriptionEn ?? 'Sin descripción'),
-          ),
-        ],
-      ),
+      appBar: AppBar(title: Text(album.title)),
+      body: Center(child: Image.network(album.cover)),
     );
   }
 }

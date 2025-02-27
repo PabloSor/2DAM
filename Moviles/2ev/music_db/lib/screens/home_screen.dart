@@ -1,35 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../providers/artist_provider.dart';
+import '../widgets/artist_card.dart';
 
-import '../provider/artist_provider.dart';
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
 
-class HomeScreen extends StatelessWidget {
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<ArtistProvider>(context, listen: false).fetchArtists();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final artistsProvider = Provider.of<ArtistsProvider>(context);
+    final artists = Provider.of<ArtistProvider>(context).artists;
 
     return Scaffold(
       appBar: AppBar(title: Text("Artistas")),
-      body: artistsProvider.artists.isEmpty
-          ? Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              itemCount: artistsProvider.artists.length,
-              itemBuilder: (context, index) {
-                final artist = artistsProvider.artists[index];
-                return ListTile(
-                  leading: Image.network(artist.thumbnail ?? ''),
-                  title: Text(artist.name),
-                  subtitle: Text(artist.country ?? ''),
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      'artist',
-                      arguments: artist,
-                    );
-                  },
-                );
-              },
-            ),
+      body: ListView.builder(
+        itemCount: artists.length,
+        itemBuilder: (context, index) => ArtistCard(artist: artists[index]),
+      ),
     );
   }
 }
