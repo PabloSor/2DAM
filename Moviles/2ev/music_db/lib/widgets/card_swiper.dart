@@ -27,27 +27,14 @@ class MyCardSwiper extends StatelessWidget {
         )
         .toList();
 
-    List<GestureDetector> cartas = [
-      GestureDetector(
-        onTap: () => Navigator.pushNamed(context, 'details', arguments: '?'),
-        child: Container(alignment: Alignment.center, color: Colors.blue),
-      ),
-      GestureDetector(
-        onTap: () => Navigator.pushNamed(context, 'details', arguments: '?'),
-        child: Container(alignment: Alignment.center, color: Colors.yellow),
-      ),
-      GestureDetector(
-        onTap: () => Navigator.pushNamed(context, 'details', arguments: '?'),
-        child: Container(alignment: Alignment.center, color: Colors.green),
-      ),
-    ];
+   
 
     return Container(
       width: double.infinity,
       height: size.height * 0.5,
       child: CardSwiper(
-        cardsCount: cartas.length,
-        cardBuilder: (context, index) => cartas[index],
+        cardsCount: cards.length,
+        cardBuilder: (context, index) => cards[index],
       ),
     );
   }

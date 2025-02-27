@@ -16,6 +16,7 @@ class AlbumProvider extends ChangeNotifier {
   getAlbums() async {
     var url = Uri.https(_baseUrl, '/api/v1/json/2/album.php', {'i': _artistId});
 
+
     var response = await http.get(url).timeout(Duration(seconds: 30));
     final decodedData = json.decode(response.body) as Map<String, dynamic>;
 

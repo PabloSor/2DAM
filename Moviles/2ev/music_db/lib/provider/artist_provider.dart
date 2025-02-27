@@ -3,28 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:music_db/models/artist_response.dart';
 
-class ArtistProvider extends ChangeNotifier {
+class ArtistsProvider extends ChangeNotifier {
   final String _baseUrl = 'theaudiodb.com';
-  List<Artist> listaArtistas = [];
+  List<Artist> artists = [];
 
-  ArtistProvider() {
-    print('ArtistProvider inicializado');
-    getArtists();
+  ArtistsProvider() {
+    loadArtists();
   }
 
-  getArtists() async {
-    var url =
-        Uri.https(_baseUrl, '/api/v1/json/2/search.php', {'s': 'Coldplay'});
+  Future<void> loadArtists() async {
+    final url = Uri.https(_baseUrl, '/api/v1/json/2/search.php', {'s': 'Coldplay'});
+    
+    try {
+      final response = await http.get(url);
+      final decodedData = json.decode(response.body);
 
-    var response = await http.get(url).timeout(Duration(seconds: 30));
-    final decodedData = json.decode(response.body) as Map<String, dynamic>;
+      if (decodedData['artists'] != null) {
+        artists = (decodedData['artists'] as List)
+            .map((artist) => Artist.fromJson(artist))
+            .toList();
+      }
 
-    listaArtistas = (decodedData['artists'] as List)
-        .map((artist) => Artist.fromJson(artist))
-        .toList();
-
-    notifyListeners();
-
-    listaArtistas.forEach((artist) => print(artist.name));
+      notifyListeners();
+    } catch (e) {
+      print("Error al cargar artistas: $e");
+    }
   }
 }

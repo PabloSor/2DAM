@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:music_db/provider/disks_provider.dart';
-import 'package:music_db/widgets/widgets.dart';
+import 'package:provider/provider.dart';
+
+import '../provider/artist_provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  get Provider => null;
-
   @override
   Widget build(BuildContext context) {
-    final disksProvider = Provider.of<DisksProvider>(context);
+    final artistsProvider = Provider.of<ArtistsProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Discos', style: TextStyle(color: Colors.white)),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search_outlined, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: Column(children: [MyCardSwiper(disks: disksProvider.listaDiscos)]),
+      appBar: AppBar(title: Text("Artistas")),
+      body: artistsProvider.artists.isEmpty
+          ? Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: artistsProvider.artists.length,
+              itemBuilder: (context, index) {
+                final artist = artistsProvider.artists[index];
+                return ListTile(
+                  leading: Image.network(artist.thumbnail ?? ''),
+                  title: Text(artist.name),
+                  subtitle: Text(artist.country ?? ''),
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      'artist',
+                      arguments: artist,
+                    );
+                  },
+                );
+              },
+            ),
     );
   }
 }
