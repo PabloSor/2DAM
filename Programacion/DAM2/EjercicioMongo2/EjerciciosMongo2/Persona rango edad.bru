@@ -1,0 +1,34 @@
+meta {
+  name: Persona rango edad
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/public/personaedad?edadMin=18&edadMax=30
+  body: json
+  auth: none
+}
+
+params:query {
+  edadMin: 18
+  edadMax: 30
+}
+
+body:json {
+  {
+    "nombre": "Pepe",
+    "apellido": "Pito",
+    "edad": 19,
+    "ciudad": "Madrid",
+    "intereses": [
+      "música",
+      "deportes"
+    ],
+    "direccion": {
+      "calle": "Calle Mayor",
+      "numero": 10,
+      "ciudad": "Madrid"
+    }
+  }
+}

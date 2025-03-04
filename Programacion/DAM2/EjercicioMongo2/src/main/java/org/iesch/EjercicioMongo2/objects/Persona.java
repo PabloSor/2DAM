@@ -5,8 +5,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.annotation.processing.Generated;
 import java.util.ArrayList;
+import java.util.Collection;
 
-@Document
+@Document(collection = "persona")
 public class Persona {
 
     @Id

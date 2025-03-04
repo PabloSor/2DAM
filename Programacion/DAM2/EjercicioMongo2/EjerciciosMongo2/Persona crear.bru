@@ -1,0 +1,29 @@
+meta {
+  name: Persona crear
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/public/personanueva
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nombre": "Pepe",
+    "apellido": "Pito",
+    "edad": 19,
+    "ciudad": "Madrid",
+    "intereses": [
+      "música",
+      "deportes"
+    ],
+    "direccion": {
+      "calle": "Calle Mayor",
+      "numero": 10,
+      "ciudad": "Madrid"
+    }
+  }
+}

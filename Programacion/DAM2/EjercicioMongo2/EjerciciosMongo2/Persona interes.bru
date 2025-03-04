@@ -1,0 +1,33 @@
+meta {
+  name: Persona interes
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8080/public/personainteres?interes=música
+  body: json
+  auth: none
+}
+
+params:query {
+  interes: música
+}
+
+body:json {
+  {
+    "nombre": "Pepe",
+    "apellido": "Pito",
+    "edad": 19,
+    "ciudad": "Madrid",
+    "intereses": [
+      "música",
+      "deportes"
+    ],
+    "direccion": {
+      "calle": "Calle Mayor",
+      "numero": 10,
+      "ciudad": "Madrid"
+    }
+  }
+}
