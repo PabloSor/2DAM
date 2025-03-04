@@ -25,7 +25,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  // Cambiar este flag para utilizar FlutterFire o HTTP
+  // Cambiar este bool para utilizar FlutterFire o HTTP
   static const bool useFlutterFire = false;
 
   @override
