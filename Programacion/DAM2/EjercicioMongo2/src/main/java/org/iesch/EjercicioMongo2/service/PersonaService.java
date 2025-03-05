@@ -41,7 +41,7 @@ public class PersonaService {
         return personaRepositorio.findByEdadBetween(edadMin, edadMax);
     }
 
-    public Object buscarInteres(String interes) {
+    public Object buscarInteresExacto(String interes) {
         Query query = new Query();
         query.addCriteria(Criteria.where("intereses").is(interes));
 
@@ -65,6 +65,27 @@ public class PersonaService {
     public Object personaEdadCiudad(Integer edad, Integer letrasCiudad) {
         Query query = new Query();
         query.addCriteria(Criteria.where("edad").gte(edad).and("ciudad").regex("^.{"+letrasCiudad+"}$"));
+
+        return mongoTemplate.find(query, Persona.class);
+    }
+
+    public Object personaCalle(String palabra) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("direccion.calle").regex(".*" + palabra + ".*", "i"));
+
+        return mongoTemplate.find(query, Persona.class);
+    }
+
+    public Object personaInteres(List<String> interes) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("intereses").in(interes));
+
+        return mongoTemplate.find(query, Persona.class);
+    }
+
+    public List<Persona> letrasNombre(String letras){
+        Query query = new Query();
+        query.addCriteria(Criteria.where("nombre").regex(".*" + letras + ".*","i"));
 
         return mongoTemplate.find(query, Persona.class);
     }

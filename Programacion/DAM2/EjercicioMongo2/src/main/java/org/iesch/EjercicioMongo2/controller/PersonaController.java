@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/public")
 public class PersonaController {
@@ -38,9 +40,9 @@ public class PersonaController {
         return ResponseEntity.ok(personaService.buscarEdad(edadMin, edadMax));
     }
 
-    @GetMapping("/personainteres")
-    public ResponseEntity<?> personaInteres(@RequestParam String interes){
-        return ResponseEntity.ok(personaService.buscarInteres(interes));
+    @GetMapping("/personainteresexacto")
+    public ResponseEntity<?> personaInteresExacto(@RequestParam String interes){
+        return ResponseEntity.ok(personaService.buscarInteresExacto(interes));
     }
 
     @GetMapping("/personaletraciudad/{letra}")
@@ -64,5 +66,20 @@ public class PersonaController {
     @GetMapping("/personaedadciudad")
     public ResponseEntity<?> personaCiudadApellido(@RequestParam Integer edad, @RequestParam Integer letrasCiudad){
         return ResponseEntity.ok(personaService.personaEdadCiudad(edad, letrasCiudad));
+    }
+
+    @GetMapping("/personacalle")
+    public ResponseEntity<?> personaCalle(@RequestParam String palabra){
+        return ResponseEntity.ok(personaService.personaCalle(palabra));
+    }
+
+    @GetMapping("/personainteres")
+    public ResponseEntity<?> personaInteres(@RequestParam List<String> interes){
+        return ResponseEntity.ok(personaService.personaInteres(interes));
+    }
+
+    @GetMapping("/personaletras")
+    public ResponseEntity<?> personaLetras(@RequestParam String letras){
+        return ResponseEntity.ok(personaService.letrasNombre(letras));
     }
 }

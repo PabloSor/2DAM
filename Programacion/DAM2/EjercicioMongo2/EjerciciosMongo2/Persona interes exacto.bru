@@ -1,17 +1,17 @@
 meta {
-  name: Persona interes
+  name: Persona interes exacto
   type: http
-  seq: 11
+  seq: 6
 }
 
 get {
-  url: http://localhost:8080/public/personainteres?interes=música, deportes
+  url: http://localhost:8080/public/personainteresexacto?interes=música
   body: json
   auth: none
 }
 
 params:query {
-  interes: música, deportes
+  interes: música
 }
 
 body:json {
