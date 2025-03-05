@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,8 +10,7 @@ import 'providers/product_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Inicializa Firebase si se usa FlutterFire
-  // await Firebase.initializeApp();
+  await Firebase.initializeApp();
 
   runApp(
     MultiProvider(
@@ -25,8 +25,8 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  // Puedes cambiar este flag para utilizar FlutterFire o HTTP
-  static const bool useFlutterFire = true;
+  // Cambiar este bool para utilizar FlutterFire o HTTP
+  static const bool useFlutterFire = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,8 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        textTheme: GoogleFonts.latoTextTheme(ThemeData(brightness: Brightness.dark).textTheme),
+        textTheme: GoogleFonts.latoTextTheme(
+            ThemeData(brightness: Brightness.dark).textTheme),
       ),
       localizationsDelegates: const [
         AppLocalizations.delegate,

@@ -1,12 +1,18 @@
 import 'dart:convert';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 import '../models/product.dart';
 
 class HttpService {
-  static const String baseUrl = 'https://tu-backend.com/api/products';
+  static const String baseUrl =
+      'https://firestore.googleapis.com/v1/projects/proyectofinal-b02eb/databases/(default)/documents/products';
 
   static Future<List<Product>> getProducts() async {
-    final response = await http.get(Uri.parse(baseUrl));
+    String? token = FirebaseAuth.instance.currentUser!.getIdToken() as String?;
+
+    final response = await http
+        .get(Uri.parse(baseUrl), headers: {'Authorization': 'Bearer $token'});
+
     if (response.statusCode == 200) {
       Iterable list = json.decode(response.body);
       return list.map((json) => Product.fromJson(json)).toList();

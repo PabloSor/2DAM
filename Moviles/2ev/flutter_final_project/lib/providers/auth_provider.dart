@@ -17,15 +17,16 @@ class AuthProvider extends ChangeNotifier {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 
   Future<void> register(String email, String password) async {
     try {
-      await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 
