@@ -1,0 +1,22 @@
+@PostMapping("/cargarDatos")
+    public ResponseEntity<?> cargarDatos (@RequestParam("file") MultipartFile file){
+        try {
+        if (file.isEmpty() || file.getSize() > 50 * 1024 *1024){
+            throw new RuntimeException("El fichero es grande o esta vacio");
+        }
+        //Validamos el Json
+        String validacion = file.getOriginalFilename();
+        if (validacion!= null && !validacion.endsWith(".json")){
+            throw new RuntimeException("El fichero es nulo o no termina en la correcta extension");
+        }
+        //Añadimos a BBDD
+        List<Estudiante> estudiantes = objectMapper.readValue(file.getInputStream(), new TypeReference<List<Estudiante>>() {});
+            for (Estudiante estudiante:estudiantes){
+                mongoTemplate.save(estudiante);
+            }
+            return ResponseEntity.ok(estudiantes);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}

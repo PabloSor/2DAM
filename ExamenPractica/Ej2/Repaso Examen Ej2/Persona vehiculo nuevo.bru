@@ -1,0 +1,32 @@
+meta {
+  name: Persona vehiculo nuevo
+  type: http
+  seq: 8
+}
+
+put {
+  url: http://localhost:8080/personaVehiculo?id=18471956N
+  body: json
+  auth: none
+}
+
+params:query {
+  id: 18471956N
+}
+
+body:json {
+  {
+      "matricula": "4836ASC",
+      "marca": "Ferrari",
+      "modelo": "Tiburon",
+      "cilindrada": 6600,
+      "cilindros": 4,
+      "revisiones": [
+        {
+          "apto": true,
+          "fecha": "2023-10-10",
+          "caduca": "2025-10-10"
+        }
+      ]
+  }
+}

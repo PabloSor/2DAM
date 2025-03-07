@@ -1,17 +1,18 @@
 meta {
-  name: Persona ID
+  name: Persona borrar vehiculo
   type: http
-  seq: 4
+  seq: 9
 }
 
-get {
-  url: http://localhost:8080/personaId?id=184719
+delete {
+  url: http://localhost:8080/personaVehiculo?personaID=67c99ed3154786208238e22a&matricula=1234ABC
   body: json
   auth: none
 }
 
 params:query {
-  id: 184719
+  personaID: 67c99ed3154786208238e22a
+  matricula: 1234ABC
 }
 
 body:json {
