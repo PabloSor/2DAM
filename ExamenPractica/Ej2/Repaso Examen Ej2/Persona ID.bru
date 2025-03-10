@@ -1,0 +1,50 @@
+meta {
+  name: Persona ID
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8080/personaId?id=184719
+  body: json
+  auth: none
+}
+
+params:query {
+  id: 184719
+}
+
+body:json {
+  {
+    "dni": "18471956N",
+    "nombre": "Pablo",
+    "apellido": "Soriano",
+    "direccion": "C/ Pedro IV Nº9",
+    "telefono": 699112540,
+    "fecha_nacimiento": "2005-10-05",
+    "licencias": [
+      {
+        "tipo": "B",
+        "expedicion": "2024-10-09",
+        "expiracion": "2034-10-09"
+      }
+    ],
+    "vehiculos": [
+      {
+        "matricula": "1234ABC",
+        "marca": "Toyota",
+        "modelo": "Corolla",
+        "tipo": "COCHE",
+        "cilindrada": 1600,
+        "cilindros": 4,
+        "revisiones": [
+          {
+            "apto": true,
+            "fecha": "2023-10-10",
+            "caduca": "2025-10-10"
+          }
+        ]
+      }
+    ]
+  }
+}
