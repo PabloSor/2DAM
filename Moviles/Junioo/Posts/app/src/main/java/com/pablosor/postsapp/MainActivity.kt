@@ -1,5 +1,6 @@
 package com.pablosor.postsapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -13,7 +14,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +35,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         initRecyclerView()
+
+        binding.btnLogOut.setOnClickListener{
+            val singOut = true
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.putExtra("confirmacion", singOut)
+            startActivity(intent)
+        }
     }
 
     private fun initRecyclerView() {

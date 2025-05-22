@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "846855673012",
+    "project_id": "posts-99738",
+    "storage_bucket": "posts-99738.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846855673012:android:1bb3509cfbffa590aef3e1",
+        "android_client_info": {
+          "package_name": "com.pablosor.perros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846855673012-1sugkk8kg7187nn31oocla8l2q11p77t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pablosor.perros",
+            "certificate_hash": "f2d575d2eda076d3a29851ffacc6c5999089dc20"
+          }
+        },
+        {
+          "client_id": "846855673012-50abbgjjekun90t9siahpi82urk30kh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF4AVGVfxSXkkflSZl6jNwObw2iSxks9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846855673012-50abbgjjekun90t9siahpi82urk30kh8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
