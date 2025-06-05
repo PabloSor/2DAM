@@ -17,7 +17,7 @@
             android:id="@+id/btnLogOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_margin="16dp"
             android:text="Cerrar Sesión" />
 
         <androidx.recyclerview.widget.RecyclerView

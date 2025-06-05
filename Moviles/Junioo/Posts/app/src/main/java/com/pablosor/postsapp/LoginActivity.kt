@@ -3,7 +3,6 @@ package com.pablosor.postsapp
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,7 +25,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 import com.pablosor.postsapp.databinding.ActivityLoginBinding
-import com.pablosor.postsapp.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -61,22 +59,20 @@ class LoginActivity : AppCompatActivity() {
             signOut()
         }
 
-
-        val intent = Intent(this, MainActivity::class.java)
+        
 
         binding.btnLogin.setOnClickListener{
             launchCredentialManager()
-            if (goodLogin){
-                startActivity(intent)
-            }else{
-                Toast.makeText(this, "No se ha podido autentificar", Toast.LENGTH_SHORT).show()
-            }
-
         }
 
     }
 
     var goodLogin = false
+
+    private fun nextScreen(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 
     // [START on_start_check_user]
     override fun onStart() {
@@ -84,6 +80,10 @@ class LoginActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         updateUI(currentUser)
+
+        if (currentUser?.isEmailVerified == true){
+            nextScreen()
+        }
     }
     // [END on_start_check_user]
 
@@ -92,9 +92,10 @@ class LoginActivity : AppCompatActivity() {
         // Instantiate a Google sign-in request
         val googleIdOption = GetGoogleIdOption.Builder()
             // Your server's client ID, not your Android client ID.
-            .setServerClientId("1074107800802-48ca4lafqb3o1bhmh6it9h4jjts8895d.apps.googleusercontent.com")
+            .setServerClientId("846855673012-50abbgjjekun90t9siahpi82urk30kh8.apps.googleusercontent.com")
             // Only show accounts previously used to sign in.
             .setFilterByAuthorizedAccounts(true)
+            .setFilterByAuthorizedAccounts(false)
             .build()
 
         // Create the Credential Manager request
@@ -147,7 +148,8 @@ class LoginActivity : AppCompatActivity() {
                     val user = auth.currentUser
                     updateUI(user)
 
-                    goodLogin = true
+                    nextScreen()
+
                 } else {
                     // If sign in fails, display a message to the user
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
