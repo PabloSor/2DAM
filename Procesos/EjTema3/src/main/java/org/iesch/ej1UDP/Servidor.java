@@ -1,4 +1,4 @@
-package org.iesch.ej1;
+package org.iesch.ej1UDP;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
